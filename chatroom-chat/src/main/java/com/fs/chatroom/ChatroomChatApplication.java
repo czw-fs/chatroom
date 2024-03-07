@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.fs.chatroom.dao")
-public class ChatroomApplication {
+public class ChatroomChatApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ChatroomApplication.class, args);
+        SpringApplication.run(ChatroomChatApplication.class, args);
     }
 
 }

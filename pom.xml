@@ -8,6 +8,14 @@
         <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>chatroom-chat</module>
+        <module>chatroom-admin</module>
+    </modules>
+
     <groupId>com.fs</groupId>
     <artifactId>chatroom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
