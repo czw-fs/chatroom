@@ -18,14 +18,11 @@ public class SystemUserSerivceImpl implements SystemUserSerivce {
     private SystemUserMapper systemUserMapper;
 
     @Override
-    public List<SystemUser> queryList(SystemUserListDto systemUserListDto) {
+    public PageInfo<SystemUser> queryList(SystemUserListDto systemUserListDto) {
         PageHelper.startPage(systemUserListDto.getPageNum(),systemUserListDto.getPageSize());
-
         List<SystemUser> systemUserList = systemUserMapper.queryList(systemUserListDto.getPageNum(),
                                                                       systemUserListDto.getPageSize());
         PageInfo<SystemUser> pageInfo = new PageInfo<>(systemUserList);
-        systemUserList = pageInfo.getList();
-
-        return systemUserList;
+        return pageInfo;
     }
 }
