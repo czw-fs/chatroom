@@ -13,20 +13,15 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PrivateMessage {
+public class UserPrivateMsg {
   private Integer id;
-
   private String sendUserId;
   private String sendUserName;
   private String sendUserProfile;
-
   private String receiveUserId;
   private String receiveUserName;
   private String receiveUserProfile;
-
   private String content;
-
   private Date sendTime;
-
-  private Integer messageTypeId;
+  private Integer msgTypeId;
 }

@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 系统用户详情
+ */
+
 @RestController
 @RequestMapping("/system/user")
 public class SystemUserController {

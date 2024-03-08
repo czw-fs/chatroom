@@ -14,6 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class GroupMsg {
     private Integer id;
+    private Integer groupId;
     private Integer sendUserId;
     private String sendUserName;
     private String sendUserProfile;

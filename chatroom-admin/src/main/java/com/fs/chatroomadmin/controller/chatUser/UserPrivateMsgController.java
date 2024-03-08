@@ -1,9 +1,9 @@
-package com.fs.chatroomadmin.controller.group;
+package com.fs.chatroomadmin.controller.chatUser;
 
-import com.fs.chatroomadmin.entity.dto.GroupInfoListDto;
-import com.fs.chatroomadmin.entity.pojo.GroupInfo;
+import com.fs.chatroomadmin.entity.dto.UserPrivateMsgListDto;
+import com.fs.chatroomadmin.entity.pojo.UserPrivateMsg;
 import com.fs.chatroomadmin.entity.vo.RespUtils;
-import com.fs.chatroomadmin.service.group.GroupInfoService;
+import com.fs.chatroomadmin.service.UserPrivateMsg.UserPrivateMsgService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,19 +14,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 群组详情
+ * 用户私聊记录
  */
 
 @RestController
-@RequestMapping("/group")
-public class GroupInfoController {
+@RequestMapping("/user/private/msg")
+public class UserPrivateMsgController {
 
     @Autowired
-    private GroupInfoService groupInfoService;
+    private UserPrivateMsgService userPrivateMsgService;
 
     @GetMapping("/list")
-    public RespUtils<Map>  list(GroupInfoListDto groupInfoListDto){
-        PageInfo<GroupInfo> pageInfo = groupInfoService.getList(groupInfoListDto);
+    public RespUtils<Map> list(UserPrivateMsgListDto userPrivateMsgListDto){
+        PageInfo<UserPrivateMsg> pageInfo = userPrivateMsgService.getList(userPrivateMsgListDto);
         Map<String, Object> map = new HashMap<>();
         map.put("total",pageInfo.getTotal());
         map.put("rows",pageInfo.getList());

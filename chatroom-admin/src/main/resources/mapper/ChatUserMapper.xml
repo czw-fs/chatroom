@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fs.chatroomadmin.mapper.ChatUserMapper">
+
+    <select id="queryList" resultType="com.fs.chatroomadmin.entity.pojo.ChatUser">
+        select *
+        from chat_user
+    </select>
+</mapper>
