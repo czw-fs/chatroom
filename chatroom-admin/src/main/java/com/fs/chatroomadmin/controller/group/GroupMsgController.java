@@ -3,7 +3,7 @@ package com.fs.chatroomadmin.controller.group;
 
 import com.fs.chatroomadmin.entity.dto.GroupMsgListDto;
 import com.fs.chatroomadmin.entity.pojo.GroupMsg;
-import com.fs.chatroomadmin.entity.vo.RespUtils;
+import com.fs.chatroomadmin.entity.RespUtils;
 import com.fs.chatroomadmin.service.groupMsg.GroupMsgService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

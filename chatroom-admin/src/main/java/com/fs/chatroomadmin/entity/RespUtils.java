@@ -1,4 +1,4 @@
-package com.fs.chatroomadmin.entity.vo;
+package com.fs.chatroomadmin.entity;
 
 
 public class RespUtils<T> {

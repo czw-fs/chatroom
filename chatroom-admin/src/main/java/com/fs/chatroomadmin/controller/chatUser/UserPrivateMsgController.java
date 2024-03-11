@@ -2,7 +2,7 @@ package com.fs.chatroomadmin.controller.chatUser;
 
 import com.fs.chatroomadmin.entity.dto.UserPrivateMsgListDto;
 import com.fs.chatroomadmin.entity.pojo.UserPrivateMsg;
-import com.fs.chatroomadmin.entity.vo.RespUtils;
+import com.fs.chatroomadmin.entity.RespUtils;
 import com.fs.chatroomadmin.service.UserPrivateMsg.UserPrivateMsgService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.fs.chatroomadmin.controller.system;
 
 import com.fs.chatroomadmin.entity.dto.SystemUserListDto;
 import com.fs.chatroomadmin.entity.pojo.SystemUser;
-import com.fs.chatroomadmin.entity.vo.RespUtils;
+import com.fs.chatroomadmin.entity.RespUtils;
 import com.fs.chatroomadmin.service.systemUser.SystemUserSerivce;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

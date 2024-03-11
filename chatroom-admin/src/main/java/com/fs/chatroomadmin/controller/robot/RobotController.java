@@ -2,7 +2,7 @@ package com.fs.chatroomadmin.controller.robot;
 
 import com.fs.chatroomadmin.entity.dto.RobotListDto;
 import com.fs.chatroomadmin.entity.pojo.Robot;
-import com.fs.chatroomadmin.entity.vo.RespUtils;
+import com.fs.chatroomadmin.entity.RespUtils;
 import com.fs.chatroomadmin.service.robot.RobotService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
