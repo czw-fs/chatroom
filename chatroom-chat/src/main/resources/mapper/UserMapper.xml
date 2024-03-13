@@ -13,4 +13,10 @@
         from chat_user
         where id != #{userId}
     </select>
+
+    <select id="findUserByUserName" resultType="com.fs.chatroom.entity.pojo.User">
+        select *
+        from chat_user
+        where user_name = #{userName}
+    </select>
 </mapper>

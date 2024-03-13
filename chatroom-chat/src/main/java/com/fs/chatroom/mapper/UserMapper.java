@@ -11,4 +11,5 @@ public interface UserMapper {
 
     List<User> selectUserWithoutSelf(@Param("userId")Integer userId);
 
+    User findUserByUserName(@Param("userName") String userName);
 }
