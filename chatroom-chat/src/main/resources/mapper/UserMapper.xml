@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fs.chatroom.mapper.UserMapper">
+
+    <select id="selectChatUserById" resultType="com.fs.chatroom.entity.pojo.User">
+        select *
+        from chat_user
+        where id = #{userId}
+    </select>
+
+    <select id="selectUserWithoutSelf" resultType="com.fs.chatroom.entity.pojo.User">
+        select *
+        from chat_user
+        where id != #{userId}
+    </select>
+</mapper>

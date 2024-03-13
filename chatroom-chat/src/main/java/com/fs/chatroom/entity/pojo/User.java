@@ -6,15 +6,23 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+/**
+ * chat_user
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupInfo {
+public class User {
+
     private Integer id;
-    private String groupName;
-    private String groupIntro;//群简介
-    private String createUser;
-    private Integer createUserId;
+
+    private String userName;
+    //用户端不反回密码
+//    private String password;
+    private String userProfile;
+    private Integer userStateId;
+    private Integer isEnabled;
     private Date createTime;
     private Date updateTime;
+
 }

@@ -1,4 +1,4 @@
-package com.fs.chatroom.config;
+package com.fs.chatroom.config.format;
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
