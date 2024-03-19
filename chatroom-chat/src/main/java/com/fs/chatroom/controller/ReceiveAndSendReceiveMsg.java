@@ -1,6 +1,7 @@
 package com.fs.chatroom.controller;
 
 import com.fs.chatroom.entity.pojo.ChatGroupMsg;
+import com.fs.chatroom.entity.pojo.FriendMsg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -21,13 +22,15 @@ public class ReceiveAndSendReceiveMsg {
         
         //转发该条数据
         simpMessagingTemplate.convertAndSend("/topic/group",chatGroupMsg);
-
     }
 
 
     /**
      * 私发消息：friend
      */
-
+    @MessageMapping("/friend/chat")
+    public void friendMsg(FriendMsg friendMsg){
+        simpMessagingTemplate.convertAndSendToUser(friendMsg.getSendUserName(),"/queue/chat",friendMsg);
+    }
 
 }
