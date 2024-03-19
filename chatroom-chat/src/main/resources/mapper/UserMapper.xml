@@ -19,9 +19,5 @@
         from chat_user
         where user_name = #{userName}
     </select>
-    <select id="selectCurrentMsgByFriendId" resultType="com.fs.chatroom.entity.pojo.FriendMsg">
-        select *
-        from user_private_msg
-        where
-    </select>
+
 </mapper>

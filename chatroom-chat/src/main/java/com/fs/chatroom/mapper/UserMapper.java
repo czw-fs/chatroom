@@ -1,6 +1,5 @@
 package com.fs.chatroom.mapper;
 
-import com.fs.chatroom.entity.pojo.FriendMsg;
 import com.fs.chatroom.entity.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,5 +13,5 @@ public interface UserMapper {
 
     User findUserByUserName(@Param("userName") String userName);
 
-    List<FriendMsg> selectCurrentMsgByFriendId(Integer chatId);
+
 }

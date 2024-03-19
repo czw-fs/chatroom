@@ -9,23 +9,28 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+ 
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        //topic用来广播，user用来实现点对点
+        config.enableSimpleBroker("/topic", "/user");
+    }
+ 
     /**
-     * 注册stomp站点
+     * 开放节点
+     * @param registry
      */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-
-        registry.addEndpoint("/ws/ep").setAllowedOrigins("*").withSockJS();
-
+        //注册两个STOMP的endpoint，分别用于广播和点对点
+ 
+ 
+        //广播
+        registry.addEndpoint("/server").setAllowedOrigins("*").withSockJS();
+ 
+//        //点对点
+//        registry.addEndpoint("/privateServer").setAllowedOrigins("*").withSockJS();
     }
-
-    /**
-     * 注册拦截"/topic","/queue"的消息
-     * 自定义包含 /topic 路径的为广播消息， 包含 /queue 为私法消息
-     */
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic","/queue");
-
-    }
+ 
+ 
 }

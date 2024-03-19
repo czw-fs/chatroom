@@ -15,10 +15,11 @@ import java.util.Date;
 @AllArgsConstructor
 public class FriendMsg {
   private Integer id;
+  private String msgId;
   private String sendUserId;
   private String sendUserName;
   private String sendUserProfile;
-  private String receiveUserId;
+  private Integer receiveUserId;
   private String receiveUserName;
   private String receiveUserProfile;
   private String content;

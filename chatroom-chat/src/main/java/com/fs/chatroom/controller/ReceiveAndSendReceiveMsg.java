@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class ReceiveAndSendReceiveMsg {
@@ -17,7 +18,7 @@ public class ReceiveAndSendReceiveMsg {
      * 群发消息
      */
     @MessageMapping("/group/chat")
-    public void groupMsg(ChatGroupMsg chatGroupMsg){
+    public void groupMsg(@RequestBody ChatGroupMsg chatGroupMsg){
         // todo 保存该条群聊消息记录到数据库中
         
         //转发该条数据
@@ -28,9 +29,11 @@ public class ReceiveAndSendReceiveMsg {
     /**
      * 私发消息：friend
      */
-    @MessageMapping("/friend/chat")
-    public void friendMsg(FriendMsg friendMsg){
-        simpMessagingTemplate.convertAndSendToUser(friendMsg.getSendUserName(),"/queue/chat",friendMsg);
+    @MessageMapping("/ws/chat")
+    public void friendMsg(@RequestBody FriendMsg friendMsg){
+        System.out.println(friendMsg.toString());
+        System.out.println(friendMsg.getReceiveUserId().toString());
+        simpMessagingTemplate.convertAndSendToUser(friendMsg.getReceiveUserId().toString(),"/chat",friendMsg);
     }
 
 }
