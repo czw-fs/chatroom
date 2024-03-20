@@ -1,7 +1,9 @@
 package com.fs.chatroom.service.user;
 
+import com.fs.chatroom.entity.pojo.User;
+
 import java.util.Map;
 
 public interface UserService {
-    Map<String,Object> getInfoByUserId(Integer userId);
+    User getInfoByUserId(Integer userId);
 }

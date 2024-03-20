@@ -8,6 +8,12 @@
         where (send_user_id = #{curId} and receive_user_id = #{friendId}) or
               (send_user_id = #{friendId} and receive_user_id = #{curId});
     </select>
+    <select id="selectRelationMeMsg" resultType="com.fs.chatroom.entity.pojo.FriendMsg">
+        select *
+        from user_private_msg
+        where send_user_id = #{userId} or receive_user_id = #{userId}
+
+    </select>
 
 
 </mapper>

@@ -10,4 +10,5 @@ public interface FriendMsgMapper {
 
     List<FriendMsg> selectCurrentMsgByFriendId(@Param("friendId") Integer FriendId,@Param("curId")Integer curId);
 
+    List<FriendMsg> selectRelationMeMsg(@Param("userId") Integer userId);
 }
